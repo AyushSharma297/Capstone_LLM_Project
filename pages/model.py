@@ -18,7 +18,7 @@ def load_llm():
      # Define the LLM
      llm=CTransformers(model='LLM_Model\llama-2-7b-chat.ggmlv3.q3_K_S.bin',
                       model_type='llama',
-                      config={'max_new_tokens':100,
+                      config={'max_new_tokens':512,
                               'temperature':0.3})
      return llm
 

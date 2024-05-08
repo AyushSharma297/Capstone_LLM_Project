@@ -6,10 +6,17 @@ import os
 import re
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
 from datetime import datetime
+
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 
 # Path for saving vectorestore , text extracted and chunks
 Faiss_db_Path = "database/vectorestore/faiss_db"
@@ -26,21 +33,31 @@ def get_pdf_text(pdf_files):
      return clean_text
 
 def preprocess(text):
-     # removing extra spaces
-     text_exsp = re.sub(r"\s+", " ", text)
-     # # removing non ASKI characters
-     # text_NonAski = re.sub(r'[^\x00-\x7F]', '', text_exsp)
+     # Tokenization
+     tokens = word_tokenize(text)
+     # Remove Noise
+     cleaned_tokens = [re.sub(r'[^\w\s]', '', token) for token in tokens]
+     # Normalization (convert to lowercase)
+     cleaned_tokens = [token.lower() for token in cleaned_tokens]
+     # Remove Stopwords
+     stop_words = set(stopwords.words('english'))
+     cleaned_tokens = [token for token in cleaned_tokens if token not in stop_words]
+     # Lemmatization
+     lemmatizer = WordNetLemmatizer()
+     cleaned_tokens = [lemmatizer.lemmatize(token) for token in cleaned_tokens]
+     # Convert the cleaned tokens back to a string
+     cleaned_text = ' '.join(cleaned_tokens)
 
-     return text_exsp
+     return cleaned_text
 
 # Split text into chunks
 
 def get_text_chunks(raw_text):
      # chunk size
-     chunk_size = 256
+     chunk_size = 512
      text_spliter = CharacterTextSplitter(
           # separate by stop line
-          separator  =".",  
+          separator  =" ",  
           # maximum characters per chunk
           chunk_size = chunk_size , 
           # how many characters to overlap chunks
