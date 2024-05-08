@@ -54,7 +54,7 @@ def preprocess(text):
 
 def get_text_chunks(raw_text):
      # chunk size
-     chunk_size = 512
+     chunk_size = 256
      text_spliter = CharacterTextSplitter(
           # separate by stop line
           separator  =" ",  

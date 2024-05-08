@@ -18,14 +18,14 @@ def load_llm():
      # Define the LLM
      llm=CTransformers(model='LLM_Model\llama-2-7b-chat.ggmlv3.q3_K_S.bin',
                       model_type='llama',
-                      config={'max_new_tokens':512,
+                      config={'max_new_tokens':128,
                               'temperature':0.3})
      return llm
 
 def custom_prompt_template():
      # Define the prompt
      template = """
-     You are an  Academic guide Of MIT-WPU, you will only reffer to given data and will not generate you own extra data,
+     You are an  Academic guide Of MIT-WPU, you will only refer to given data and will not generate you own extra data,
      if asked who are you reply "Academic guide" :
      {user_query}
      """
