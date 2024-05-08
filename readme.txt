@@ -1,12 +1,9 @@
-# GEN AI chatbot
+# GEN AI Academic Guide
 
 ## Introduction
 ------------
-This project introduces a novel voice-based chatbot that leverages the power of large language models (LLMs) and external data sources to answer user inquiries. 
-The core engine is an LLM from Hugging Face, enabling the chatbot to understand natural language questions and provide informative answers. 
-LangChain, a conversational AI framework, manages the conversation flow, ensuring smooth interaction and context awareness. Streamlit facilitates a user-friendly 
-interface for voice interaction. 
+This project presents a chat assistant that uses the Retrieval-Augmented Generation (RAG) model and Vectorestores to answer user inquiries by utilizing the power of large language models (LLMs) and external data sources. The chat assistant's primary engine, an LLM from Meta (llama 2), allows it to comprehend queries in natural language and respond with insightful responses. The LLM flow is controlled by the conversational AI framework LangChain, which guarantees seamless communication and context awareness. 
 
-Additionally, the chatbot integrates with the Elevenlabs API, allowing it to convert voice to text and generate spoken responses. 
-Finally, the system extracts information from provided PDFs, expanding its knowledge base and offering a richer user experience. 
-This project bridges the gap between traditional document analysis and voice interaction, creating a user friendly and informative platform for knowledge seekers.
+The chat assistant's UI is made with Streamlit, a Python framework for building interactive web applications. Users may easily ask questions and get pertinent information with Streamlit's smooth method of visualizing and interacting with the chat assistant. Additionally, effective data handling is made possible by Streamlit's integration with Python.
+
+Overall, this project combines advanced AI technologies with user-friendly interfaces to create an innovative solution for academic guidance and information retrieval. The integration of LLMs, RAG model, Vectorestores, LangChain, and Streamlit showcases the potential of AI in enhancing user experiences and improving access to academic resources.
