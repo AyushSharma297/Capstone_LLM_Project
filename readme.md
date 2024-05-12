@@ -7,3 +7,7 @@ This project presents a chat assistant that uses the Retrieval-Augmented Generat
 The chat assistant's UI is made with Streamlit, a Python framework for building interactive web applications. Users may easily ask questions and get pertinent information with Streamlit's smooth method of visualizing and interacting with the chat assistant. Additionally, effective data handling is made possible by Streamlit's integration with Python.
 
 Overall, this project combines advanced AI technologies with user-friendly interfaces to create an innovative solution for academic guidance and information retrieval. The integration of LLMs, RAG model, Vectorestores, LangChain, and Streamlit showcases the potential of AI in enhancing user experiences and improving access to academic resources.
+
+## Poster
+------------
+![GEN AI Academic Guide Poster](./Documents/Project_Docs/Gen AI Academic Guide Poster.pdf)
