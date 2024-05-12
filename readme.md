@@ -10,4 +10,4 @@ Overall, this project combines advanced AI technologies with user-friendly inter
 
 ## Poster
 ------------
-![GEN AI Academic Guide Poster](./Documents/Project_Docs/Gen AI Academic Guide Poster.pdf)
+![GEN AI Academic Guide Poster](./Documents/Project_Docs/Gen%20AI%20Academic%20Guide%20Poster.pdf)
