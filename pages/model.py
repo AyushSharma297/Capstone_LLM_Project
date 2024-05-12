@@ -36,7 +36,7 @@ def retrival_chain(db,llm):
      qa_chain = RetrievalQA.from_chain_type(
             llm=llm,
             chain_type='stuff',
-            retriever=db.as_retriever(),
+            retriever=db.as_retriever(search_kwargs={"k":3}),
             input_key='question',
      )
      return qa_chain
